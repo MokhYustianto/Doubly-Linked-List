@@ -41,6 +41,7 @@ struct node *addAtEnd(struct node *head, int num){
 	return head;
 }
 
+//operasi menghapus node pertama atau head node dari deretan angka//	
 struct node*delFirstHeadNode(struct node *head){
 	struct node *temp = head;
 	head = head->next;
@@ -52,7 +53,7 @@ struct node*delFirstHeadNode(struct node *head){
 void print(struct node*head){
 	struct node  *ptr = head;
 	while(ptr!= NULL){
-		printf("%d,", ptr->num);
+		printf("%d, ", ptr->num);
 		ptr = ptr->next;
 		
 	}
@@ -80,12 +81,12 @@ int main(){
 	head = addAtEnd(head, 28);
 	
 	
-	printf("Deretan angka sebelum Penghapusan Node Pertama atau head : \n");
+	printf("Deretan angka sebelum penghapusan Head Node : \n");
 	print(head);
 	
-	//operasi menghapus node pertama atau head node dari deretan angka//
+	
 	head = delFirstHeadNode(head);
-	printf("\nDeretan angka setelah penghapusan Node Pertama atau head : \n");
+	printf("\nDeretan angka setelah penghapusan Head Node : \n");
 	print(head);
 	
 	return 0;
