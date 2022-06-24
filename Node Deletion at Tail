@@ -33,6 +33,7 @@ struct node *addAtEnd(struct node *head, int num){
 	return head;
 }
 
+//operasi menghapus tail node dari deretan angka//
 struct node *deleteLastTailNode(struct node *head){
 	struct node *temp = head;
 	struct node *temp2;
@@ -78,7 +79,7 @@ int main(){
 	printf("Deretan angka sebelum Penghapusan Tail Node : \n");
 	print(head);
 	
-	//operasi menghapus node pertama atau head node dari deretan angka//
+	//operasi menghapus tail node dari deretan angka//
 	head = deleteLastTailNode(head);
 	printf("\nDeretan angka setelah penghapusan Tail Node : \n");
 	print(head);
