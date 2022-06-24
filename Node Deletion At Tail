@@ -1,0 +1,89 @@
+///Program Node Deletion at Tail Doubly Linked List Mokh.Yustianto.R///
+
+#include<stdlib.h>
+#include<stdio.h>
+
+struct node{
+	struct node *prev;
+	int num;
+	struct node *next;
+};
+
+struct node *addToEmpty(struct node *head, int num){
+	struct node *temp = (struct node*)malloc(sizeof(struct node*));
+	temp->prev = NULL;
+	temp->num = num;
+	temp->next = NULL;
+	head = temp;
+	return head;
+}
+
+struct node *addAtEnd(struct node *head, int num){
+	struct node* temp, *tp;
+	temp = (struct node*)malloc(sizeof(struct node*));
+	temp->prev = NULL;
+	temp->num = num;
+	temp->next = NULL;
+	tp = head;
+	
+	while(tp->next != NULL)
+	tp = tp->next;
+	tp->next = temp;
+	temp->prev = tp;
+	return head;
+}
+
+struct node *deleteLastTailNode(struct node *head){
+	struct node *temp = head;
+	struct node *temp2;
+	while(temp->next != NULL) temp = temp->next;
+	temp2 = temp->prev;
+	temp2->next = NULL;
+	free(temp);
+	return head;
+}
+
+void print(struct node*head){
+	struct node  *ptr = head;
+	while(ptr!= NULL){
+		printf("%d, ", ptr->num);
+		ptr = ptr->next;
+		
+	}
+	
+}
+
+
+///diketahui deretan angka nya adalah 23, 45, 79, 3, 47, 11, 92, 60, 39, 28, 6, 72, 13, 28///
+
+int main(){
+	struct node  *head = NULL;
+	struct node *ptr;
+	head = addToEmpty(head, 23 );
+	head = addAtEnd(head, 45);
+	head = addAtEnd(head, 79);
+	head = addAtEnd(head, 3);
+	head = addAtEnd(head, 47);
+	head = addAtEnd(head, 11);
+	head = addAtEnd(head, 92);
+	head = addAtEnd(head, 60);
+	head = addAtEnd(head, 39); 
+	head = addAtEnd(head, 28);
+	head = addAtEnd(head, 6);
+	head = addAtEnd(head, 72);
+	head = addAtEnd(head, 13);
+	head = addAtEnd(head, 28);
+	
+	
+	printf("Deretan angka sebelum Penghapusan Tail Node : \n");
+	print(head);
+	
+	//operasi menghapus node pertama atau head node dari deretan angka//
+	head = deleteLastTailNode(head);
+	printf("\nDeretan angka setelah penghapusan Tail Node : \n");
+	print(head);
+	
+	return 0;
+	
+}
+
