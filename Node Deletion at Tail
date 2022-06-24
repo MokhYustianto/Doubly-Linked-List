@@ -79,7 +79,7 @@ int main(){
 	printf("Deretan angka sebelum Penghapusan Tail Node : \n");
 	print(head);
 	
-	//operasi menghapus tail node dari deretan angka//
+	
 	head = deleteLastTailNode(head);
 	printf("\nDeretan angka setelah penghapusan Tail Node : \n");
 	print(head);
