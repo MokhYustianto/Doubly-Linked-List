@@ -53,7 +53,7 @@ struct node*delFirstHeadNode(struct node *head){
 void print(struct node*head){
 	struct node  *ptr = head;
 	while(ptr!= NULL){
-		printf("%d,", ptr->num);
+		printf("%d, ", ptr->num);
 		ptr = ptr->next;
 		
 	}
